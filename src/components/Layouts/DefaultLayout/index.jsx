@@ -1,34 +1,22 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import classNames from "classnames/bind";
 import Header from "../components/Header";
+import styles from "./DefaultLayout.module.scss";
 import Sidebar from "./Sidebar";
 
+const cx = classNames.bind(styles);
+
 function DefaultLayout({ children }) {
-  const [isLogin, setIsLogin] = useState(false);
-
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (isLogin) {
-      navigate("/login");
-    } else {
-      setIsLogin(true);
-    }
-  }, []);
-
-  console.log("default lay out run");
-
-  return isLogin ? (
-    <div>
-      <Header />
-      <div className="container">
-        <Sidebar />
-        {children}
-      </div>
-    </div>
-  ) : (
-    <></>
-  );
+    return (
+        <div>
+            <div className={cx("wrapper")}>
+                <Header />
+                <div className={cx("container")}>
+                    <Sidebar />
+                    <div className={cx("content")}>{children}</div>
+                </div>
+            </div>
+        </div>
+    );
 }
 
 export default DefaultLayout;
