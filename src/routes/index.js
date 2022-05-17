@@ -9,16 +9,16 @@ import Following from "@/pages/Following";
 import Profile from "@/pages/Profile";
 import Upload from "@/pages/Upload";
 import Login from "@/pages/Login";
-// import Search from '@/pages/Search';
+import Search from "@/pages/Search";
 
 // Public routes
 const publicRoutes = [
     { path: "/", component: Home, key: uuidv4() },
     { path: "/login", component: Login, key: uuidv4() },
     { path: "/following", component: Following, key: uuidv4() },
-    { path: "/profile", component: Profile, key: uuidv4() },
+    { path: "/@:nicknam", component: Profile, key: uuidv4() },
     { path: "/upload", component: Upload, layout: HeaderOnly, key: uuidv4() },
-    // { path: "/search", component: Search, layout: null, key: uuidv4() },
+    { path: "/search", component: Search, layout: null, key: uuidv4() },
 ];
 
 const privateRoutes = [];
