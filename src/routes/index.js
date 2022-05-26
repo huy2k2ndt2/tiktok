@@ -1,5 +1,6 @@
-import routesConfig from "@/config/routes";
+import { v4 as uuidv4 } from "uuid";
 
+import routesConfig from "@/config/routes";
 // Layouts
 import { HeaderOnly } from "@/components/Layouts";
 
@@ -12,11 +13,11 @@ import Search from "@/pages/Search";
 
 // Public routes
 const publicRoutes = [
-    { path: routesConfig.home, component: Home },
-    { path: routesConfig.following, component: Following },
-    { path: routesConfig.profile, component: Profile },
-    { path: routesConfig.upload, component: Upload, layout: HeaderOnly },
-    { path: routesConfig.search, component: Search, layout: null },
+    { path: routesConfig.home, component: Home, key: uuidv4() },
+    { path: routesConfig.following, component: Following, key: uuidv4() },
+    { path: routesConfig.profile, component: Profile, key: uuidv4() },
+    { path: routesConfig.upload, component: Upload, layout: HeaderOnly, key: uuidv4() },
+    { path: routesConfig.search, component: Search, layout: null, key: uuidv4() },
 ];
 
 const privateRoutes = [];
