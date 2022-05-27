@@ -2,7 +2,7 @@ import { v4 as uuidv4 } from "uuid";
 
 import routesConfig from "@/config/routes";
 // Layouts
-import { HeaderOnly } from "@/components/Layouts";
+import { HeaderOnly } from "@/layouts";
 
 // Pages
 import Home from "@/pages/Home";
